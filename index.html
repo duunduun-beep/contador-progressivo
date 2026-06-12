@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa Espera</title>
+    <!-- Importando a nova fonte Iosevka Charon -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- Chamando o seu arquivo CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,7 +36,7 @@
         </div>
 
         <div class="seccao-senha">
-            <p class="dica">Já está com ele em mãos? Digite a senha:</p>
+            <p class="dica">Já está com ele em mãos? Digite a senha secreta:</p>
             <input type="text" id="campoSenha" placeholder="Senha do presente">
             <button onclick="pararContador()">Desbloquear</button>
         </div>
@@ -43,7 +45,7 @@
     <script>
         const dataInicio = new Date('2026-06-12T00:00:00').getTime();
         let motorDoTempo;
-        const senhaSecreta = "nãoescolhiaindamaslogovaitacerto";
+        const senhaSecreta = "AMOR123";
 
         function atualizarContador() {
             const agora = new Date().getTime();
@@ -60,7 +62,6 @@
             const minutos = Math.floor((tempoPercorrido % (1000 * 60 * 60)) / (1000 * 60));
             const segundos = Math.floor((tempoPercorrido % (1000 * 60)) / 1000);
 
-            // Adiciona um "0" na frente se for menor que 10 (ex: 09 em vez de 9)
             document.getElementById('dias').innerText = dias < 10 ? '0' + dias : dias;
             document.getElementById('horas').innerText = horas < 10 ? '0' + horas : horas;
             document.getElementById('minutos').innerText = minutos < 10 ? '0' + minutos : minutos;
