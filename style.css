@@ -6,11 +6,9 @@
 }
 
 body {
-    /* Agora usamos a Montserrat para o texto geral (limpa e moderna) */
     font-family: 'Montserrat', sans-serif;
-    background-color: #080203; 
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 120 120'%3E%3Cpath fill='%232b0512' fill-opacity='0.6' d='M60 90 C25 60 15 45 25 30 C35 20 45 25 60 40 C75 25 85 20 95 30 C105 45 95 60 60 90 Z'/%3E%3C/svg%3E");
-    background-size: 140px 140px; 
+    /* Fundo limpo com gradiente radial sutil (mais claro no centro, escuro nas bordas) */
+    background: radial-gradient(circle at center, #1a0409 0%, #080203 80%);
     
     display: flex;
     flex-direction: column;
@@ -28,7 +26,7 @@ body {
     -webkit-backdrop-filter: blur(8px); 
     
     padding: 40px 30px;
-    border-radius: 12px; /* Deixei as bordas um pouco menos redondas para ficar mais formal */
+    border-radius: 12px;
     border: 1px solid rgba(135, 15, 53, 0.4);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     width: 100%;
@@ -36,13 +34,12 @@ body {
 }
 
 h1 {
-    /* A Playfair Display traz aquele ar de convite formal e elegante */
     font-family: 'Playfair Display', serif; 
     font-size: 2.5rem;
     color: #ff99b3; 
     margin-bottom: 30px;
     font-weight: 600;
-    font-style: italic; /* O itálico nessa fonte fica muito sofisticado */
+    font-style: italic;
 }
 
 .temporizador {
@@ -58,7 +55,7 @@ h1 {
     align-items: center;
     background: rgba(100, 13, 35, 0.3);
     padding: 15px 10px;
-    border-radius: 8px; /* Bordas mais retas */
+    border-radius: 8px;
     min-width: 75px;
 }
 
@@ -73,7 +70,7 @@ h1 {
     font-size: 0.75rem;
     text-transform: uppercase;
     color: #ff80a6;
-    letter-spacing: 2px; /* Mais espaço entre as letras dá um tom mais sério */
+    letter-spacing: 2px;
     margin-top: 8px;
     font-weight: 600;
 }
@@ -96,9 +93,9 @@ input {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.05); /* Fundo um pouco mais escuro na caixa de texto */
+    background: rgba(255, 255, 255, 0.05);
     color: white;
-    border: 1px solid #6b0f24; /* Borda mais fina */
+    border: 1px solid #6b0f24;
     border-radius: 6px;
     outline: none;
     text-align: center;
@@ -119,9 +116,9 @@ button {
     width: 100%;
     padding: 14px;
     font-size: 1rem;
-    font-family: 'Montserrat', sans-serif; /* Botão com fonte limpa */
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    text-transform: uppercase; /* Letras maiúsculas para mais formalidade */
+    text-transform: uppercase;
     letter-spacing: 1.5px;
     background-color: #8c1031; 
     color: white;
