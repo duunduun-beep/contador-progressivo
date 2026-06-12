@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Espera</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="contador-container">
+        <h1>O tempo até o seu presente...</h1>
+        
+        <div class="temporizador">
+            <div class="unidade">
+                <span id="dias">0</span>
+                <label>Dias</label>
+            </div>
+            <div class="unidade">
+                <span id="horas">0</span>
+                <label>Horas</label>
+            </div>
+            <div class="unidade">
+                <span id="minutos">0</span>
+                <label>Minutos</label>
+            </div>
+            <div class="unidade">
+                <span id="segundos">0</span>
+                <label>Segundos</label>
+            </div>
+        </div>
+
+        <div class="seccao-senha">
+            <p class="dica">Já está com ele em mãos? Digite a senha:</p>
+            <input type="text" id="campoSenha" placeholder="Senha do presente">
+            <button onclick="pararContador()">Desbloquear</button>
+        </div>
+    </div>
+
+    <script>
+        const dataInicio = new Date('2026-06-12T00:00:00').getTime();
+        let motorDoTempo;
+        const senhaSecreta = "nãoescolhiaindamaslogovaitacerto";
+
+        function atualizarContador() {
+            const agora = new Date().getTime();
+
+            if (agora < dataInicio) {
+                console.log("Aguardando chegar o dia 12 de Junho...");
+                return; 
+            }
+
+            const tempoPercorrido = agora - dataInicio;
+
+            const dias = Math.floor(tempoPercorrido / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((tempoPercorrido % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((tempoPercorrido % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((tempoPercorrido % (1000 * 60)) / 1000);
+
+            // Adiciona um "0" na frente se for menor que 10 (ex: 09 em vez de 9)
+            document.getElementById('dias').innerText = dias < 10 ? '0' + dias : dias;
+            document.getElementById('horas').innerText = horas < 10 ? '0' + horas : horas;
+            document.getElementById('minutos').innerText = minutos < 10 ? '0' + minutos : minutos;
+            document.getElementById('segundos').innerText = segundos < 10 ? '0' + segundos : segundos;
+        }
+
+        motorDoTempo = setInterval(atualizarContador, 1000);
+
+        function pararContador() {
+            const senhaDigitada = document.getElementById('campoSenha').value;
+
+            if (senhaDigitada === senhaSecreta) {
+                clearInterval(motorDoTempo);
+                alert("Senha correta! A nossa espera finalmente acabou. ❤️");
+            } else {
+                alert("Senha incorreta! Parece que o presente ainda não está nas suas mãos... 👀");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* Reseta as margens padrão */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Agora usamos a Montserrat para o texto geral (limpa e moderna) */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #080203; 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 120 120'%3E%3Cpath fill='%232b0512' fill-opacity='0.6' d='M60 90 C25 60 15 45 25 30 C35 20 45 25 60 40 C75 25 85 20 95 30 C105 45 95 60 60 90 Z'/%3E%3C/svg%3E");
+    background-size: 140px 140px; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #ffccd5; 
+    padding: 20px;
+}
+
+.contador-container {
+    text-align: center;
+    background: rgba(43, 5, 18, 0.75);
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px); 
+    
+    padding: 40px 30px;
+    border-radius: 12px; /* Deixei as bordas um pouco menos redondas para ficar mais formal */
+    border: 1px solid rgba(135, 15, 53, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 500px; 
+}
+
+h1 {
+    /* A Playfair Display traz aquele ar de convite formal e elegante */
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.5rem;
+    color: #ff99b3; 
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-style: italic; /* O itálico nessa fonte fica muito sofisticado */
+}
+
+.temporizador {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-bottom: 30px;
+}
+
+.unidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(100, 13, 35, 0.3);
+    padding: 15px 10px;
+    border-radius: 8px; /* Bordas mais retas */
+    min-width: 75px;
+}
+
+.unidade span {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.unidade label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #ff80a6;
+    letter-spacing: 2px; /* Mais espaço entre as letras dá um tom mais sério */
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.seccao-senha {
+    margin-top: 20px;
+}
+
+.dica {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #ffb3c6;
+    font-style: italic;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05); /* Fundo um pouco mais escuro na caixa de texto */
+    color: white;
+    border: 1px solid #6b0f24; /* Borda mais fina */
+    border-radius: 6px;
+    outline: none;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: border 0.3s;
+    letter-spacing: 1px;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+input:focus {
+    border-color: #ff4d79; 
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif; /* Botão com fonte limpa */
+    font-weight: 700;
+    text-transform: uppercase; /* Letras maiúsculas para mais formalidade */
+    letter-spacing: 1.5px;
+    background-color: #8c1031; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #b31440;
+}
+
+button:active {
+    transform: scale(0.97); 
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 400px) {
+    .temporizador {
+        gap: 8px;
+    }
+    .unidade {
+        min-width: 60px;
+        padding: 12px 5px;
+    }
+    .unidade span {
+        font-size: 2rem;
+    }
+    h1 {
+        font-size: 2.1rem;
+    }
+}
